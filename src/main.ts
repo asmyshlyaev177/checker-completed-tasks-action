@@ -61,6 +61,9 @@ async function run(): Promise<void> {
       owner: github.context.repo.owner,
       repo: github.context.repo.repo
     })
+   if (!isTaskCompleted) {
+    throw new Error('Not all tasks completed')
+  }
   } catch (error) {
     core.setFailed(error.message)
   }
