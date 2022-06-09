@@ -4,24 +4,22 @@
   "description": "An action that checks if all tasks are completed in the pull requests.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/index.ts -o dist",
+    "build": "yarn run format && ncc build src/index.ts -o dist",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
-    "pack": "ncc build",
-    "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test -- --passWithNoTests"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/asmyshlyaev177/task-completed-checker-action.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "kentaro-m",
+  "author": "asmyshlyaev177",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
@@ -32,7 +30,6 @@
     "@types/node": "^17.0.41",
     "@typescript-eslint/parser": "^2.8.0",
     "@vercel/ncc": "^0.34.0",
-    "@zeit/ncc": "^0.20.5",
     "eslint": "^5.16.0",
     "eslint-plugin-github": "^2.0.0",
     "eslint-plugin-jest": "^22.21.0",
