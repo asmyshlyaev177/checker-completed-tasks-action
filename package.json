@@ -1,8 +1,8 @@
 {
   "name": "task-completed-checker-action",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An action that checks if all tasks are completed in the pull requests.",
-  "main": "lib/main.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
