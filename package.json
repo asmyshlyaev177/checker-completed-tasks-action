@@ -1,6 +1,6 @@
 {
   "name": "task-completed-checker-action",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An action that checks if all tasks are completed in the pull requests.",
   "main": "lib/main.js",
   "scripts": {
@@ -40,6 +40,6 @@
     "js-yaml": "^3.13.1",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.6.4"
+    "typescript": "^4.7.3"
   }
 }
