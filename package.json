@@ -4,7 +4,8 @@
   "description": "An action that checks if all tasks are completed in the pull requests.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "yarn run format && ncc build src/index.ts -o dist",
+    "build": "yarn run format && ncc build src/index.ts -o dist && yarn run minify",
+    "minify": "terser --compress -- dist/index.js > index.js && mv index.js dist/index.js",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
@@ -37,6 +38,7 @@
     "jest-circus": "^24.9.0",
     "js-yaml": "^3.13.1",
     "prettier": "^1.19.1",
+    "terser": "^5.14.0",
     "ts-jest": "^24.2.0",
     "typescript": "^4.7.3"
   }
