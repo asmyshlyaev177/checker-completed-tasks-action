@@ -1,6 +1,8 @@
 # Task Completed Checker Action
 A GitHub action that checks if all tasks are completed in the pull requests.
 
+## This fork is works, but work in progress.
+
 ## :arrow_forward: Usage
 
 ### Create a workflow
