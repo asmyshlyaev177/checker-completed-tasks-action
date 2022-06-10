@@ -63,7 +63,7 @@ async function run() {
       output: {
         title: appName,
         // summary: isTaskCompleted
-        //   ? 'All tasks are completed!'
+        //   ? 'All tasks are completed'
         //   : 'Some tasks are uncompleted!',
         summary: 'Results',
         // text
