@@ -1,6 +1,6 @@
 name: 'Task Completed Checker'
-description: 'An action that checks if all tasks are completed in the pull requests.'
-author: 'kentaro-m'
+description: 'Checker completed tasks action.'
+author: 'asmyshlyaev177'
 runs:
   using: 'node12'
   main: 'dist/index.js'
