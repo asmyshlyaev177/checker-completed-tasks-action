@@ -42,6 +42,7 @@ async function run() {
     core.debug(text)
 
     const conclusion = isTaskCompleted ? 'success' : 'failure'
+    core.debug('CONCLUSION ' + conclusion)
     return await githubApi.checks.create({
       name: appName,
       head_sha: github.context.payload.pull_request?.head.sha,
@@ -53,15 +54,11 @@ async function run() {
         summary: isTaskCompleted
           ? 'All tasks are completed'
           : 'Some tasks are uncompleted!',
-        // text
         text
       },
       owner: github.context.repo.owner,
       repo: github.context.repo.repo
     })
-    // if (!isTaskCompleted) {
-    //   throw new Error('Not all tasks completed')
-    // }
   } catch (error) {
     const message =
       ((error as unknown) as Error)?.message || error || 'Something went wrong'
