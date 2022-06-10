@@ -34,24 +34,12 @@ async function run() {
     core.debug('creates a list of tasks which removed ignored task: ')
     core.debug(result)
 
-    const uncompletedTasks = result.match(/(- \[[ ]\].+)/g)
-    const completedTasks = result.match(/(- \[[x]\].+)/g)
-    // const isTaskCompleted = result.match(/(- \[[ ]\].+)/g) === null
-    const isTaskCompleted = !uncompletedTasks
+    const isTaskCompleted = result.match(/(- \[[ ]\].+)/g) === null
 
     const text = createTaskListText(result)
 
     core.debug('creates a list of completed tasks and uncompleted tasks: ')
     core.debug(text)
-    core.debug('COMPLETED ' + completedTasks)
-    core.debug('UNCOMPLETED ' + uncompletedTasks)
-    core.debug('isTaskCompleted ' + isTaskCompleted)
-    const summary = `Completed tasks:
-    ${(completedTasks && `${completedTasks}`) || 'Nothing....'};
-    
-    Uncompleted tasks:
-    ${(uncompletedTasks && `${uncompletedTasks}`) || 'All done!'}`
-    core.debug('SUMMARY ' + summary)
 
     const conclusion = isTaskCompleted ? 'success' : 'failure'
     return await githubApi.checks.create({
@@ -62,12 +50,11 @@ async function run() {
       completed_at: new Date().toISOString(),
       output: {
         title: appName,
-        // summary: isTaskCompleted
-        //   ? 'All tasks are completed'
-        //   : 'Some tasks are uncompleted!',
-        summary: 'Results',
+        summary: isTaskCompleted
+          ? 'All tasks are completed'
+          : 'Some tasks are uncompleted!',
         // text
-        text: summary
+        text
       },
       owner: github.context.repo.owner,
       repo: github.context.repo.repo
