@@ -1,5 +1,5 @@
 {
-  "name": "task-completed-checker-action",
+  "name": "checker-completed-tasks-action",
   "version": "0.1.3",
   "description": "An action that checks if all tasks are completed in the pull requests.",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asmyshlyaev177/task-completed-checker-action.git"
+    "url": "git+https://github.com/asmyshlyaev177/checker-completed-tasks-action.git"
   },
   "keywords": [
     "actions",
