@@ -1,4 +1,4 @@
-name: 'Task Completed Checker'
+name: 'Checker completed tasks action'
 description: 'Checker completed tasks action.'
 author: 'asmyshlyaev177'
 runs:
